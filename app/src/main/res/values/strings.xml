@@ -3,4 +3,7 @@
     <string name="et_item_hint">Add Item</string>
     <string name="btn_shop">Shop!</string>
     <string name="btn_add_item">Add</string>
+    <string name="title_activity_shop_car">Shop Car</string>
+    <string name="text_toal">Total</string>
+
 </resources>
