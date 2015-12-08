@@ -29,26 +29,18 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-        <ScrollView
+
+        <ListView android:id="@+id/lst_items"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ListView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/lst_items">
-                </ListView>
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btn_shop"/>
-            </LinearLayout>
-        </ScrollView>
+            android:layout_height="wrap_content">
+        </ListView>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_shop"/>
+
     </LinearLayout>
 
 </LinearLayout>
