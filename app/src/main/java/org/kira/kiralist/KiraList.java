@@ -1,7 +1,6 @@
 package org.kira.kiralist;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by huan on 7/12/15.
