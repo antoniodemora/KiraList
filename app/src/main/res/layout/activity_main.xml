@@ -38,11 +38,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TableLayout
+                <ListView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tl_items">
-                </TableLayout>
+                    android:id="@+id/lst_items">
+                </ListView>
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
