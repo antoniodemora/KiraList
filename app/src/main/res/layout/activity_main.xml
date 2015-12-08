@@ -26,29 +26,13 @@
             android:text="@string/btn_add_item"
             android:layout_height="wrap_content"
             android:onClick="addItem"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_shop"/>
     </LinearLayout>
-    <LinearLayout
+    <ListView android:id="@+id/lst_items"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
-        <ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ListView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/lst_items">
-                </ListView>
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btn_shop"/>
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
-
+        android:layout_height="wrap_content">
+    </ListView>
 </LinearLayout>
