@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kira List</string>
+    <string name="et_item_hint">Add Item</string>
+    <string name="btn_shop">Shop!</string>
+    <string name="btn_add_item">Add</string>
+</resources>
