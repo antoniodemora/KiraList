@@ -1,6 +1,7 @@
 package org.kira.kiralist;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -34,5 +35,11 @@ public class MainActivity extends Activity {
         String item = et_item.getText().toString();
         et_item.setText("");
         adapter.insert(item, 0);
+    }
+
+    public void shop(View view) {
+        Intent intent = new Intent(this, ShopCar.class);
+        startActivity(intent);
+        finish();
     }
 }

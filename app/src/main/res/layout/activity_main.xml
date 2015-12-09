@@ -29,7 +29,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_shop"/>
+            android:text="@string/btn_shop"
+            android:onClick="shop"/>
     </LinearLayout>
     <ListView android:id="@+id/lst_items"
         android:layout_width="fill_parent"
