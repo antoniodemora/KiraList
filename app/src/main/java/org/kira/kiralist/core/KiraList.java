@@ -1,4 +1,4 @@
-package org.kira.kiralist;
+package org.kira.kiralist.core;
 
 import java.util.ArrayList;
 
