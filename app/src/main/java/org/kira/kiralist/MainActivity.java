@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
+    public static final String WISHLIST = "com.kira.kiralist.wishlist";
+
     private EditText et_item;
     private ListView lst_items;
     private KiraList kiraList;
@@ -19,6 +21,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         kiraList = new KiraList();
+        if(savedInstanceState != null) {
+            kiraList.setWishList(savedInstanceState.getStringArrayList(WISHLIST));
+        }
         et_item = (EditText) findViewById(R.id.et_item);
         lst_items = (ListView) findViewById(R.id.lst_items);
 
@@ -29,6 +34,12 @@ public class MainActivity extends Activity {
         );
 
         lst_items.setAdapter(adapter);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceSate){
+        savedInstanceSate.putStringArrayList(WISHLIST, kiraList.getWishList());
+        super.onSaveInstanceState(savedInstanceSate);
     }
 
     public void addItem(View view){
