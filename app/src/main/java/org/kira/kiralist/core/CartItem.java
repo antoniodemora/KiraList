@@ -1,9 +1,11 @@
 package org.kira.kiralist.core;
 
+import java.io.Serializable;
+
 /**
  * Created by huan on 9/12/15.
  */
-class CartItem{
+public class CartItem {
     private String item;
     private float price;
     private float quantity;
