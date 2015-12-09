@@ -7,11 +7,11 @@ import java.util.ArrayList;
  */
 public class KiraList {
     private ArrayList<String> wishList;
-    private ShopCar shopCar;
+    private ShoppingCart shoppingCart;
 
     public KiraList(){
         wishList = new ArrayList<>();
-        shopCar = new ShopCar();
+        shoppingCart = new ShoppingCart();
     }
 
     /**
@@ -47,101 +47,11 @@ public class KiraList {
      * @param quantity quantity of items
      * @return ShopCar
      */
-    public ShopCar addItemToCar(int item_index, float price, float quantity){
-        shopCar.addToCar(wishList.get(item_index), price, quantity);
+    public ShoppingCart addItemToCar(int item_index, float price, float quantity){
+        shoppingCart.addToCar(wishList.get(item_index), price, quantity);
         wishList.remove(item_index);
-        return shopCar;
+        return shoppingCart;
     }
 
-    class ShopCar{
-        ArrayList<CarItem> items;
 
-        public ShopCar(){
-            items = new ArrayList<>();
-        }
-
-        /**
-         * Adds an item to the shopping car
-         * @param item item to add
-         * @param price price of the item
-         * @param quantity quantity of items
-         * @return ArrayList<CarItem>
-         */
-        public ArrayList<CarItem> addToCar(String item, float price, float quantity){
-            items.add(new CarItem(item, price, quantity));
-            return items;
-        }
-
-        /**
-         * Computes the total amount for the shopping
-         * @return Float
-         */
-        public Float getGrandTotal(){
-            float total = 0;
-            for (CarItem item : items){
-                total += (item.price * item.quantity);
-            }
-            return total;
-        }
-
-        class CarItem{
-            private String item;
-            private float price;
-            private float quantity;
-
-            public CarItem(String item, float price, float quantity){
-                this.item = item;
-                this.price = price;
-                this.quantity = quantity;
-            }
-
-            /**
-             * Returns the Item
-             * @return String
-             */
-            public String getItem(){
-                return item;
-            }
-
-            /**
-             * Sets the value for the item's name
-             * @param item the name of the item
-             */
-            public void setItem(String item){
-                this.item = item;
-            }
-
-            /**
-             * Returns the price of the item
-             * @return float
-             */
-            public float getPrice(){
-                return price;
-            }
-
-            /**
-             * Sets the value for the item's price
-             * @param price the price of the item
-             */
-            public void setPrice(float price){
-                this.price = price;
-            }
-
-            /**
-             * Returns the quantity of items to buy
-             * @return float
-             */
-            public float getQuantity(){
-                return quantity;
-            }
-
-            /**
-             * Sets the quantity of items to buy
-             * @param quantity
-             */
-            public void setQuantity(float quantity){
-                this.quantity = quantity;
-            }
-        }
-    }
 }
