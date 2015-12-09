@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
     }
 
     public void shop(View view) {
-        Intent intent = new Intent(this, ShopCar.class);
+        Intent intent = new Intent(this, ShoppingCartActivity.class);
         startActivity(intent);
     }
 }

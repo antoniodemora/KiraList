@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ShopCar"
+            android:name=".ShoppingCartActivity"
             android:label="@string/title_activity_shop_car"
             android:parentActivityName=".MainActivity" >
             <meta-data
