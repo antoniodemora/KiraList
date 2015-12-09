@@ -25,6 +25,14 @@ public class KiraList {
     }
 
     /**
+     * Sets the wishlist
+     * @param wishList ArrayList of items to buy
+     */
+    public void setWishList(ArrayList<String> wishList){
+        this.wishList = wishList;
+    }
+
+    /**
      * Returns the wishlist for the object
      * @return ArrayList<String>
      */
