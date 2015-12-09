@@ -15,7 +15,7 @@ public class MainActivity extends Activity {
 
     private EditText new_item;
     private KiraList kiraList;
-    private ArrayAdapter adapter;
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
