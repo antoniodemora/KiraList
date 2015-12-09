@@ -8,11 +8,12 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import org.kira.kiralist.core.KiraList;
+
 public class MainActivity extends Activity {
     public static final String WISHLIST = "com.kira.kiralist.wishlist";
 
-    private EditText et_item;
-    private ListView lst_items;
+    private EditText new_item;
     private KiraList kiraList;
     private ArrayAdapter adapter;
 
@@ -24,8 +25,8 @@ public class MainActivity extends Activity {
         if(savedInstanceState != null) {
             kiraList.setWishList(savedInstanceState.getStringArrayList(WISHLIST));
         }
-        et_item = (EditText) findViewById(R.id.et_item);
-        lst_items = (ListView) findViewById(R.id.lst_items);
+        new_item = (EditText) findViewById(R.id.new_item);
+        ListView wishlist = (ListView) findViewById(R.id.wishlist);
 
         adapter = new ArrayAdapter<String>(
                 this,
@@ -33,7 +34,7 @@ public class MainActivity extends Activity {
                 kiraList.getWishList()
         );
 
-        lst_items.setAdapter(adapter);
+        wishlist.setAdapter(adapter);
     }
 
     @Override
@@ -43,8 +44,8 @@ public class MainActivity extends Activity {
     }
 
     public void addItem(View view){
-        String item = et_item.getText().toString();
-        et_item.setText("");
+        String item = new_item.getText().toString();
+        new_item.setText("");
         adapter.insert(item, 0);
     }
 
