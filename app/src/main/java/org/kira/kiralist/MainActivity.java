@@ -52,6 +52,5 @@ public class MainActivity extends Activity {
     public void shop(View view) {
         Intent intent = new Intent(this, ShopCar.class);
         startActivity(intent);
-        finish();
     }
 }
