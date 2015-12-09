@@ -4,5 +4,5 @@
     <string name="et_item_hint">Agregar Artículo</string>
     <string name="btn_shop">¡Comprar!</string>
     <string name="btn_add_item">Agregar</string>
-    <string name="title_activity_shop_car">Carro de compras</string>
+    <string name="title_activity_shopping_cart">Carro de compras</string>
 </resources>

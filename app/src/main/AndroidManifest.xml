@@ -17,7 +17,7 @@
         </activity>
         <activity
             android:name=".ShoppingCartActivity"
-            android:label="@string/title_activity_shop_car"
+            android:label="@string/title_activity_shopping_cart"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
