@@ -45,7 +45,7 @@ public class KiraList {
      * @param item_index wishlist item to add
      * @param price price for the item
      * @param quantity quantity of items
-     * @return ShopCar
+     * @return Shopping Cart
      */
     public ShoppingCart addItemToCar(int item_index, float price, float quantity){
         shoppingCart.addToCar(wishList.get(item_index), price, quantity);
