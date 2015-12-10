@@ -42,7 +42,7 @@ public class KiraList {
 
     /**
      * Adds the specified item to the shop car and deletes it from the wish list
-     * @param item_index wishlist item to add
+     * @param item_index index of the wishlist item to add
      * @param price price for the item
      * @param quantity quantity of items
      * @return Shopping Cart
