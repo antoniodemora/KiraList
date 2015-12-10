@@ -9,4 +9,5 @@
     <string name="cancel">Cancelar</string>
     <string name="label_quantity">Cantidad</string>
     <string name="accept">Aceptar</string>
+    <string name="delete_item">Seguro que desea eliminar el artículo: </string>
 </resources>
