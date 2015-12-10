@@ -19,9 +19,12 @@ public class KiraList {
      * @param item item to add
      * @return ArrayList<String>
      */
-    public ArrayList<String> addItem(String item){
+    public void addItem(String item){
         wishList.add(item);
-        return wishList;
+    }
+
+    public void deleteItem(int index){
+        wishList.remove(index);
     }
 
     /**
