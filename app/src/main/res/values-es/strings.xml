@@ -5,4 +5,8 @@
     <string name="btn_shop">¡Comprar!</string>
     <string name="btn_add_item">Agregar</string>
     <string name="title_activity_shopping_cart">Carro de compras</string>
+    <string name="label_price">Precio</string>
+    <string name="cancel">Cancelar</string>
+    <string name="label_quantity">Cantidad</string>
+    <string name="accept">Aceptar</string>
 </resources>
