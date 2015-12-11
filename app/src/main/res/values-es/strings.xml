@@ -9,5 +9,8 @@
     <string name="cancel">Cancelar</string>
     <string name="label_quantity">Cantidad</string>
     <string name="accept">Aceptar</string>
-    <string name="delete_item">Seguro que desea eliminar el artículo: </string>
+    <string name="delete_item">¿Seguro que desea eliminar el artículo: </string>
+    <string name="leaving_app">Saliendo de la aplicación</string>
+    <string name="confirm_leave_app">¿Seguro que desea salir?</string>
+    <string name="text_price">Precio</string>
 </resources>
