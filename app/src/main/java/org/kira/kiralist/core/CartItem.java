@@ -5,7 +5,8 @@ import java.io.Serializable;
 /**
  * Created by huan on 9/12/15.
  */
-public class CartItem {
+public class CartItem implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String item;
     private float price;
     private float quantity;
@@ -62,5 +63,13 @@ public class CartItem {
      */
     public void setQuantity(float quantity){
         this.quantity = quantity;
+    }
+
+    /**
+     * Returns the subtotal for the item
+     * @return price times quantity
+     */
+    public float getSubTotal(){
+        return this.price * this.quantity;
     }
 }

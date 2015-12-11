@@ -1,11 +1,13 @@
 package org.kira.kiralist.core;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by huan on 7/12/15.
  */
-public class KiraList {
+public class KiraList implements Serializable {
+    private static final long serialVersionUID = 1L;
     private ArrayList<String> wishList;
     private ShoppingCart shoppingCart;
 
@@ -48,13 +50,26 @@ public class KiraList {
      * @param item_index index of the wishlist item to add
      * @param price price for the item
      * @param quantity quantity of items
-     * @return Shopping Cart
      */
-    public ShoppingCart addItemToCar(int item_index, float price, float quantity){
+    public void addItemToCar(int item_index, float price, float quantity){
         shoppingCart.addToCar(wishList.get(item_index), price, quantity);
         wishList.remove(item_index);
-        return shoppingCart;
     }
 
+    /**
+     * Sets the shopping cart for the kiralist
+     * @param shoppingCart the new shopping cart
+     */
+    public void setShoppingCart(ShoppingCart shoppingCart){
+        this.shoppingCart = shoppingCart;
+    }
+
+    /**
+     * Returns the shopping cart for the kiralist
+     * @return ShoppingCart for KiraList
+     */
+    public ShoppingCart getShoppingCart(){
+        return this.shoppingCart;
+    }
 
 }
