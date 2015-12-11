@@ -16,7 +16,7 @@ import android.widget.ListView;
 import org.kira.kiralist.core.KiraList;
 
 public class MainActivity extends Activity {
-    public static final String WISHLIST = "com.kira.kiralist.wishlist";
+    public static final String KIRALIST = "org.kira.kiralist.KiraList";
 
     private EditText new_item;
     private KiraList kiraList;
@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         kiraList = new KiraList();
         if(savedInstanceState != null) {
-            kiraList.setWishList(savedInstanceState.getStringArrayList(WISHLIST));
+            kiraList = (KiraList) savedInstanceState.getSerializable(KIRALIST);
         }
         new_item = (EditText) findViewById(R.id.new_item);
         ListView wishlist = (ListView) findViewById(R.id.wishlist);
@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceSate){
-        savedInstanceSate.putStringArrayList(WISHLIST, kiraList.getWishList());
+        savedInstanceSate.putSerializable(KIRALIST, kiraList);
         super.onSaveInstanceState(savedInstanceSate);
     }
 
@@ -71,10 +71,14 @@ public class MainActivity extends Activity {
 
     public void shop(View view) {
         Intent intent = new Intent(this, ShoppingCartActivity.class);
-        intent.putExtra(WISHLIST, kiraList.getWishList());
+        intent.putExtra(KIRALIST, kiraList);
         startActivity(intent);
     }
 
+
+    /*
+        DIALOGS
+     */
     public void showDialogAddToCart(final int position){
         String item = kiraList.getWishList().get(position);
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
