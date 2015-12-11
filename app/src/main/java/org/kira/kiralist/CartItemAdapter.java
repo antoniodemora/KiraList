@@ -1,6 +1,7 @@
 package org.kira.kiralist;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -27,27 +28,34 @@ public class CartItemAdapter extends ArrayAdapter{
         itemText.setText(item.getItem());
 
         TextView quantity_text = new TextView(getContext());
-        quantity_text.setTextSize(10);
-        quantity_text.setText("#: " + Float.toString(item.getQuantity()));
+        quantity_text.setTextSize(15);
+        quantity_text.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
+        quantity_text.setText("C: " + Float.toString(item.getQuantity()));
 
         TextView price_text = new TextView(getContext());
-        price_text.setTextSize(10);
+        price_text.setTextSize(15);
         price_text.setText(getContext().getString(R.string.text_price) + ": $ " + Float.toString(item.getPrice()));
-
-        TextView subtotal_text = new TextView(getContext());
-        subtotal_text.setTextSize(10);
-        subtotal_text.setText("Subtotal: $ " + Float.toString(item.getSubTotal()));
 
         LinearLayout details_layout = new LinearLayout(getContext());
         details_layout.addView(quantity_text);
         details_layout.addView(price_text);
-        details_layout.addView(subtotal_text);
 
         LinearLayout parent_layout = new LinearLayout(getContext());
         parent_layout.setOrientation(LinearLayout.VERTICAL);
+        parent_layout.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
         parent_layout.addView(itemText);
         parent_layout.addView(details_layout);
 
-        return parent_layout;
+        TextView subtotal_text = new TextView(getContext());
+        subtotal_text.setTextSize(30);
+        subtotal_text.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        subtotal_text.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
+        subtotal_text.setText("$ " + Float.toString(item.getSubTotal()));
+
+        LinearLayout super_layout = new LinearLayout(getContext());
+        super_layout.addView(parent_layout);
+        super_layout.addView(subtotal_text);
+
+        return super_layout;
     }
 }

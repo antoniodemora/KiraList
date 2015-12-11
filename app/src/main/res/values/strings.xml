@@ -12,6 +12,6 @@
     <string name="delete_item">Are you sure you want to delete the item :</string>
     <string name="leaving_app">Leaving App</string>
     <string name="confirm_leave_app">Are you sure you want to leave?</string>
-    <string name="text_price">Price</string>
+    <string name="text_price">UP</string>
 
 </resources>

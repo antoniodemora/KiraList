@@ -12,5 +12,5 @@
     <string name="delete_item">¿Seguro que desea eliminar el artículo: </string>
     <string name="leaving_app">Saliendo de la aplicación</string>
     <string name="confirm_leave_app">¿Seguro que desea salir?</string>
-    <string name="text_price">Precio</string>
+    <string name="text_price">PU</string>
 </resources>
