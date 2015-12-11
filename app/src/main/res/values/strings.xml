@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Kira List</string>
     <string name="et_item_hint">Add Item</string>
-    <string name="btn_shop">Shop!</string>
-    <string name="btn_add_item">Add</string>
+    <string name="btn_view_cart">View Cart</string>
     <string name="title_activity_shopping_cart">Shopping Car</string>
     <string name="text_toal">Total</string>
     <string name="label_price">Price</string>

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import org.kira.kiralist.core.CartItem;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -22,19 +23,20 @@ public class CartItemAdapter extends ArrayAdapter{
 
     public View getView(int position, View convertView, ViewGroup parent){
         CartItem item = (CartItem) getItem(position);
+        DecimalFormat df = new DecimalFormat("#.##");
 
         TextView itemText = new TextView(getContext());
-        itemText.setTextSize(25);
+        itemText.setTextSize(20);
         itemText.setText(item.getItem());
 
         TextView quantity_text = new TextView(getContext());
         quantity_text.setTextSize(15);
         quantity_text.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
-        quantity_text.setText("C: " + Float.toString(item.getQuantity()));
+        quantity_text.setText("C: " + new DecimalFormat("#.####").format(item.getQuantity()));
 
         TextView price_text = new TextView(getContext());
         price_text.setTextSize(15);
-        price_text.setText(getContext().getString(R.string.text_price) + ": $ " + Float.toString(item.getPrice()));
+        price_text.setText(getContext().getString(R.string.text_price) + ": $ " + df.format(item.getPrice()));
 
         LinearLayout details_layout = new LinearLayout(getContext());
         details_layout.addView(quantity_text);
@@ -50,7 +52,7 @@ public class CartItemAdapter extends ArrayAdapter{
         subtotal_text.setTextSize(30);
         subtotal_text.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
         subtotal_text.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
-        subtotal_text.setText("$ " + Float.toString(item.getSubTotal()));
+        subtotal_text.setText("$ " + df.format(item.getSubTotal()));
 
         LinearLayout super_layout = new LinearLayout(getContext());
         super_layout.addView(parent_layout);

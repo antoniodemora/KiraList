@@ -9,6 +9,8 @@ import android.widget.TextView;
 import org.kira.kiralist.core.KiraList;
 import org.kira.kiralist.core.ShoppingCart;
 
+import java.text.DecimalFormat;
+
 
 public class ShoppingCartActivity extends Activity {
     private ShoppingCart shoppingCart;
@@ -22,7 +24,8 @@ public class ShoppingCartActivity extends Activity {
         KiraList kiraList = (KiraList) intent.getSerializableExtra(MainActivity.KIRALIST);
         shoppingCart = kiraList.getShoppingCart();
         grand_total = (TextView) findViewById(R.id.grand_total);
-        grand_total.setText("$ " + shoppingCart.getGrandTotal().toString());
+        DecimalFormat df = new DecimalFormat("#.##");
+        grand_total.setText("$ " + df.format(shoppingCart.getGrandTotal()));
 
         ListView cart_items = (ListView) findViewById(R.id.cart_items);
 

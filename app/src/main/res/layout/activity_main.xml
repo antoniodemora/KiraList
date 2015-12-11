@@ -23,14 +23,9 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:text="@string/btn_add_item"
             android:layout_height="wrap_content"
-            android:onClick="addItem"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_shop"
-            android:onClick="shop"/>
+            android:text="@string/btn_view_cart"
+            android:onClick="viewCart"/>
     </LinearLayout>
     <ListView android:id="@+id/wishlist"
         android:layout_width="fill_parent"

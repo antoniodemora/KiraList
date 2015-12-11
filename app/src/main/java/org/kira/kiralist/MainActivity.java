@@ -5,6 +5,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.method.KeyListener;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
@@ -12,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.kira.kiralist.core.KiraList;
 
@@ -31,6 +35,16 @@ public class MainActivity extends Activity {
             kiraList = (KiraList) savedInstanceState.getSerializable(KIRALIST);
         }
         new_item = (EditText) findViewById(R.id.new_item);
+        new_item.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (keyEvent != null){
+                    addItem();
+                    return true;
+                }
+                return false;
+            }
+        });
         ListView wishlist = (ListView) findViewById(R.id.wishlist);
 
         adapter = new ArrayAdapter<String>(
@@ -63,13 +77,13 @@ public class MainActivity extends Activity {
         super.onSaveInstanceState(savedInstanceSate);
     }
 
-    public void addItem(View view){
+    public void addItem(){
         String item = new_item.getText().toString();
         new_item.setText("");
         adapter.insert(item, 0);
     }
 
-    public void shop(View view) {
+    public void viewCart(View view) {
         Intent intent = new Intent(this, ShoppingCartActivity.class);
         intent.putExtra(KIRALIST, kiraList);
         startActivity(intent);
